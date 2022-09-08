@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 } from "uuid";
 import "./App.css";
 
 // Todo App Main Components
 const TodoApp = () => {
+  useEffect(() => {
+    // GET request using fetch inside useEffect React hook
+    fetch("https://mockend.com/ptathienlap/my-todo-app/items")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, []);
 
   // useState hook
   const [items, setItems] = useState(() => {
