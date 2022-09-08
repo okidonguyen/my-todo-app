@@ -1,7 +1,7 @@
 
 {
   "Items": {
-    "string": [{
+    "string[]": [{
       "id": "dbc7acfb-f722-4fc6-a663-385eb569b944",
       "title": "ok babie",
       "completed": false
