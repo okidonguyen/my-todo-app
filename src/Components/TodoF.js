@@ -1,20 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { v4 } from "uuid";
 import "./App.css";
 
 // Todo App Main Components
 const TodoApp = () => {
-  useEffect(() => {
-    // GET request using fetch inside useEffect React hook
-    fetch("https://mockend.com/ptathienlap/my-todo-app/items")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
 
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  }, []);
-
+  console.log("items");
+  
   // useState hook
   const [items, setItems] = useState(() => {
     const storageItems = JSON.parse(localStorage.getItem("items"));
@@ -77,7 +69,8 @@ const TodoApp = () => {
 const TodoHeader = () => {
   return (
     <header className="header-container">
-      <h1 className="header-tittle">Okido Todo App</h1>
+      <h1 className="header-tittle">Todo Function React</h1>
+      <h3>With Local Storage</h3>
     </header>
   );
 };
